@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    box-sizing: border-box;
+    background-color: #0c0113;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100vw;
+    overflow-x: hidden;
+    }
+  
