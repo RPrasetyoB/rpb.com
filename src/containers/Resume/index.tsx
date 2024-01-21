@@ -32,7 +32,8 @@ const Resume = () => {
           display: "flex",
           flexDirection: "column",
           paddingTop:"60px",
-          gap:"6vh"
+          gap:"6vh",
+          width: isMobile ? "350px" : ""
         }}
       >
         <Box
