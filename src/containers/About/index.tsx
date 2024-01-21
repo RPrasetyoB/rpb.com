@@ -69,7 +69,9 @@ const About = () => {
               learning. Explore my portfolio and discover the exciting projects
               I've worked on. Let's build something amazing together!
             </Typography>
-            <Box
+
+            {!isMobile && (
+              <Box
               sx={{
                 display: "flex",
                 alignSelf: "center",
@@ -87,6 +89,8 @@ const About = () => {
                 sx={{ color: "lightskyblue", alignSelf: "center" }}
               />
             </Box>
+            )}
+            
           </Box>
           <Box
               sx={{

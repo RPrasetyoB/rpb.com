@@ -1,39 +1,50 @@
-import { Box, Card, CardContent, Typography, useMediaQuery } from "@mui/material";
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import MovieIcon from '@mui/icons-material/Movie';
-import TerminalIcon from '@mui/icons-material/Terminal';
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import bg from "../../assets/resume.webp";
-import { ExpTimeline, Rating } from "../../component";
+import { ExpTimeline, Hobbies, Rating } from "../../component";
 import theme from "../../Theme";
+import { useEffect, useState } from "react";
 
 const Resume = () => {
+  const [customBreakpoint, setCustomBreakpoint] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    setCustomBreakpoint(768);
+  }, []);
+
+  const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box
       sx={{
-        height: isMobile ? "auto" : "100svh",
+        height: isTablet ? "auto" : "100svh",
+        minHeight: isTablet ? "100svh" : "",
         width: "100svw",
         paddingTop: isMobile ? 0 : "64px",
+        paddingBottom: isTablet ? "40px" : 0,
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
         flexDirection: isMobile ? "column" : "flex",
         justifyContent: "space-around",
-        overflow:"hidden",
+        overflow: "hidden",
         alignItems: "center",
-        paddingBottom: isMobile ? "40px" : 0
       }}
     >
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          paddingTop:"60px",
-          gap:"6vh",
-          width: isMobile ? "350px" : "auto"
+          paddingTop: "60px",
+          gap: isTablet ? "2vh" : "6vh",
+          width: isMobile ? "350px" : "auto",
         }}
       >
         <Box
@@ -44,7 +55,10 @@ const Resume = () => {
             gap: "2vh",
           }}
         >
-          <Typography variant="h4" sx={{ fontSize: "1.8rem", textAlign:"center" }}>
+          <Typography
+            variant="h4"
+            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+          >
             Software Engineer Skills
           </Typography>
           <Box>
@@ -144,7 +158,7 @@ const Resume = () => {
                   variant="h6"
                   sx={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  Component Libraries{" "}
+                  Component<br/>Libraries{" "}
                   <div style={{ display: "flex" }}>
                     :&emsp;
                     <Rating value={5} />
@@ -155,14 +169,17 @@ const Resume = () => {
           </Box>
         </Box>
         <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                gap: "2vh",
-            }}
-            >
-          <Typography variant="h4" sx={{ fontSize: "1.8rem", textAlign:"center" }}>
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: "2vh",
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+          >
             Languages
           </Typography>
           <Box>
@@ -192,54 +209,37 @@ const Resume = () => {
             </Card>
           </Box>
         </Box>
+        {(isTablet && !isCustomBreakpoint) && (<Hobbies />)}
       </Box>
       <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap:"4vh"
-      }}>
-        <Box sx={{paddingTop:"60px", display:"flex", flexDirection:"column", gap:"2vh"}}>
-          <Typography variant="h4" sx={{ fontSize: "1.8rem", textAlign:"center" }}>
-            Experience & Education
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "4vh",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "2vh",
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+          >
+            Experience &<br/>Education
           </Typography>
-          <Box sx={{maxWidth: isTablet ? "350px" : "500px"}}>
+          <Box sx={{ maxWidth: isTablet ? "350px" : "500px" }}>
             <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.9)" }}>
-                <CardContent>
-                    <ExpTimeline />
-                </CardContent>
+              <CardContent>
+                <ExpTimeline />
+              </CardContent>
             </Card>
           </Box>
         </Box>
-        <Box sx={{display:"flex", flexDirection:"column", gap:"2vh"}}>
-          <Typography variant="h4" sx={{ fontSize: "1.8rem", textAlign:"center" }}>
-            Hobbies & Interest
-          </Typography>
-          <Box sx={{maxWidth:"500px"}}>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.6)" }}>
-                <CardContent>
-                    <Box sx={{display:"flex", justifyContent:"space-around", alignItems:"center"}}>
-                    <Box sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                            <SportsEsportsIcon sx={{color:"white", fontSize:"4rem"}}/>
-                            <Typography sx={{color:"white"}}>Gaming</Typography>
-                        </Box>
-                        <Box sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                            <CameraAltIcon sx={{color:"white", fontSize:"4rem"}}/>
-                            <Typography sx={{color:"white"}}>Photography</Typography>
-                        </Box>
-                        <Box sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                            <MovieIcon sx={{color:"white", fontSize:"4rem"}}/>
-                            <Typography sx={{color:"white"}}>Watch Movie</Typography>
-                        </Box>
-                        <Box sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                            <TerminalIcon sx={{color:"white", fontSize:"4rem"}}/>
-                            <Typography sx={{color:"white"}}>Tech News</Typography>
-                        </Box>
-                    </Box>
-                </CardContent>
-            </Card>
-          </Box>
-        </Box>
+        {(!isTablet || isCustomBreakpoint) && (<Hobbies />)}        
       </Box>
     </Box>
   );
