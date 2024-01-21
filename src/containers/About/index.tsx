@@ -79,7 +79,7 @@ const About = () => {
               <HorizontalRuleIcon
                 sx={{ color: "lightskyblue", alignSelf: "center" }}
               />
-              <Typography variant="body1" sx={{ maxWidth: "20vw" }}>
+              <Typography variant="body1" sx={{ maxWidth: isMobile ? "26vw" : "20vw" }}>
                 Banyuwangi, East-Java, Indonesia
               </Typography>
               <HorizontalRuleIcon
@@ -99,7 +99,7 @@ const About = () => {
               <img
                 src={photo}
                 style={{
-                  maxHeight: isMobile ? "" : "80vh",
+                  maxHeight: isMobile ? "40vh" : "80vh",
                   objectFit: "contain",
                   filter: "brightness(0.9)",
                   maskImage:

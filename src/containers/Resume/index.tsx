@@ -1,24 +1,30 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography, useMediaQuery } from "@mui/material";
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import MovieIcon from '@mui/icons-material/Movie';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import bg from "../../assets/resume.webp";
 import { ExpTimeline, Rating } from "../../component";
+import theme from "../../Theme";
 
 const Resume = () => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box
       sx={{
-        height: "100svh",
+        height: isMobile ? "auto" : "100svh",
         width: "100svw",
-        paddingTop: "64px",
+        paddingTop: isMobile ? 0 : "64px",
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
+        flexDirection: isMobile ? "column" : "flex",
         justifyContent: "space-around",
-        overflowX:"hidden"
+        overflowX:"hidden",
+        alignItems: "center",
+        paddingBottom: isMobile ? "40px" : 0
       }}
     >
       <Box
@@ -159,7 +165,7 @@ const Resume = () => {
             Languages
           </Typography>
           <Box>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.6)" }}>
+            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.9)" }}>
               <CardContent>
                 <Typography
                   variant="h6"
@@ -196,8 +202,8 @@ const Resume = () => {
           <Typography variant="h4" sx={{ fontSize: "1.8rem", textAlign:"center" }}>
             Experience & Education
           </Typography>
-          <Box sx={{maxWidth:"500px"}}>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.6)" }}>
+          <Box sx={{maxWidth: isTablet ? "350px" : "500px"}}>
+            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.9)" }}>
                 <CardContent>
                     <ExpTimeline />
                 </CardContent>

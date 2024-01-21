@@ -9,7 +9,6 @@ import theme from "../../Theme";
 
 const Home = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   
   const contact = {
     name: "Renaldi P. Basuki",
