@@ -22,7 +22,7 @@ const Resume = () => {
         display: "flex",
         flexDirection: isMobile ? "column" : "flex",
         justifyContent: "space-around",
-        overflowX:"hidden",
+        overflow:"hidden",
         alignItems: "center",
         paddingBottom: isMobile ? "40px" : 0
       }}

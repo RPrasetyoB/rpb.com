@@ -20,7 +20,8 @@ const About = () => {
         background: "linear-gradient(to right, #030303, #44495C)",
         display : "flex",
         flexDirection: "column",
-        justifyContent:"center"
+        justifyContent:"center",
+        overflow:"hidden"
       }}
     >
         <Typography
