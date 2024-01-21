@@ -1,74 +1,113 @@
-import { Box, Typography } from "@mui/material";
-import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { Box, Typography, useMediaQuery } from "@mui/material";
+import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import photo from "../../assets/rpb.webp";
+import theme from "../../Theme";
 
 const About = () => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box
       sx={{
-        paddingTop: "64px",
-        paddingRight: "5vw",
+        paddingTop: isTablet ? 0 :"64px",
+        paddingRight: "8vw",
         paddingLeft: "6vw",
+        paddingBottom: isMobile ? "40px" : 0,
         width: "100svw",
-        textAlign: "center",
-        height: "100svh",
-        display: "flex",
-        justifyContent:"center",
-        gap:"5vw",
-        background: 'linear-gradient(to right, #030303, #44495C)',
-        margin: "auto",
+        height: isMobile  ? "auto" : "100svh",
+        gap: isTablet ? "5vw" : 0,
+        background: "linear-gradient(to right, #030303, #44495C)",
+        display : "flex",
+        flexDirection: "column",
+        justifyContent:"center"
       }}
     >
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 800,
+            fontFamily: "Rubik, system-ui",
+            paddingTop: isMobile ? "64px" : 0
+          }}
+        >
+          ABOUT
+        </Typography>
       <Box
         sx={{
           textAlign: "left",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap:"10vh",
-          width: "50%",
+          gap: "4vh",
+          width: "100%",
+          maxHeight: "100%"
         }}
-      >
-        
-        <Typography variant="h1" sx={{fontSize: "2.8rem", fontWeight:800, fontFamily:"Rubik, system-ui"}}>ABOUT</Typography>
-        <Box sx={{display:"flex", flexDirection:"column", justifyContent: "space-between", height: "60%"}}>
-          <Typography variant="h6">
-            Hello! I'm <span style={{color: "lightskyblue"}}>Renaldi Prasetyo Basuki</span>, a passionate software engineer
-            with a love for creating efficient and innovative solutions. I
-            specialize in JavaScript and TypeScript, bringing 1 year of coding
-            experience to the table. My journey in the world of technology is
-            driven by a curiosity to solve problems and a commitment to continuous
-            learning. Explore my portfolio and discover the exciting projects I've
-            worked on. Let's build something amazing together!
-          </Typography>
-          <Box sx={{display: "flex", alignSelf:"center", marginLeft: "-3vw", textAlign: "center"}}>
-            <HorizontalRuleIcon sx={{color: "lightskyblue"}} />
-            <Typography variant="body1">
-              Banyuwangi, East Java, Indonesia 
+      >        
+        <Box
+          sx={{ display: "flex", flexDirection: isMobile ? "column" : "row", width: "100%", gap: isMobile ? "20px": "10px"}}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              gap: "8vh",
+              textAlign: isMobile ? "justify" : "left"
+            }}
+          >
+            <Typography variant="h6">
+              Hello! I'm{" "}
+              <span style={{ color: "lightskyblue" }}>
+                Renaldi Prasetyo Basuki
+              </span>
+              , a passionate software engineer with a love for creating
+              efficient and innovative solutions. I specialize in JavaScript and
+              TypeScript. My journey in the world of technology is driven by a
+              curiosity to solve problems and a commitment to continuous
+              learning. Explore my portfolio and discover the exciting projects
+              I've worked on. Let's build something amazing together!
             </Typography>
-            <HorizontalRuleIcon sx={{color: "lightskyblue"}} />
-          </Box>        
-        </Box>        
-      </Box>
-      <Box
-        sx={{
-          width: "50%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
-        <img
-          src={photo}
-          style={{
-            maxHeight: "90vh",
-            objectFit: "contain",
-            filter: "brightness(1.1)",
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 50%, transparent 97%)",
-          }}
-        />
+            <Box
+              sx={{
+                display: "flex",
+                alignSelf: "center",
+                marginLeft: "-3vw",
+                textAlign: "center",
+              }}
+            >
+              <HorizontalRuleIcon
+                sx={{ color: "lightskyblue", alignSelf: "center" }}
+              />
+              <Typography variant="body1" sx={{ maxWidth: "20vw" }}>
+                Banyuwangi, East-Java, Indonesia
+              </Typography>
+              <HorizontalRuleIcon
+                sx={{ color: "lightskyblue", alignSelf: "center" }}
+              />
+            </Box>
+          </Box>
+          <Box
+              sx={{
+                width: isMobile ? "auto" : "50%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              <img
+                src={photo}
+                style={{
+                  maxHeight: isMobile ? "" : "80vh",
+                  objectFit: "contain",
+                  filter: "brightness(0.9)",
+                  maskImage:
+                    "linear-gradient(to right, transparent 0%, black 50%, transparent 97%)",
+                }}
+              />
+            </Box>
+        </Box>
       </Box>
     </Box>
   );

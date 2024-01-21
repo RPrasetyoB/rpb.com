@@ -20,9 +20,30 @@ const theme = createTheme({
     h1: {
       fontFamily: "Rubik, system-ui",
       fontWeight: 700,
-      fontSize: "3rem",
-      color: "white"
+      color: "white",
+      '@media (max-width:768px)': {
+        fontSize: '2.5rem',
+      }
     },
+
+    h2: {
+      fontFamily: "Rubik, system-ui",
+      fontWeight: 700,
+      color: "white",
+      '@media (max-width:768px)': {
+        fontSize: '2.2rem',
+      }
+    },
+
+    h3: {
+      fontFamily: "Rubik, system-ui",
+      fontWeight: 700,
+      color: "white",
+      '@media (max-width:768px)': {
+        fontSize: '1.6rem',
+      }
+    },
+
 
     h4: {
       fontFamily: "Rubik, system-ui",
