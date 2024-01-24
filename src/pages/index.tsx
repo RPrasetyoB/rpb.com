@@ -13,7 +13,7 @@ import {
   Toolbar,
 } from "@mui/material";
 import { About, Home, Resume } from "../containers";
-import { Link, Element, animateScroll as scroll } from "react-scroll";
+import { Link, Element } from "react-scroll";
 
 interface Props {
   window?: () => Window;
@@ -35,9 +35,6 @@ const MainPage = (props: Props) => {
     setActiveSection(to);
   };
 
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
