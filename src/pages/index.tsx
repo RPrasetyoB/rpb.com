@@ -31,6 +31,12 @@ const MainPage = (props: Props) => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const delayDrawerToggle = () => {
+    setTimeout(() => {
+      handleDrawerToggle();
+    }, 850);
+  };
+
   const handleSetActive = (to: string) => {
     setActiveSection(to);
   };
@@ -137,7 +143,7 @@ const MainPage = (props: Props) => {
                             borderRadius: 0,
                           }),
                         }}
-                        onClick={handleDrawerToggle}
+                        onClick={delayDrawerToggle}
                       >
                         {item}
                         {activeSection === item.toLowerCase() && (

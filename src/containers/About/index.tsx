@@ -15,8 +15,9 @@ const About = () => {
         paddingLeft: "6vw",
         paddingBottom: isMobile ? "40px" : 0,
         width: "100svw",
-        height: isMobile  ? "auto" : "100svh",
-        gap: isTablet ? "5vw" : 0,
+        height: isTablet ? "auto" : "100svh",
+        minHeight: "90svh",
+        gap: isTablet ? "5vw" : "10px",
         background: "linear-gradient(to right, #030303, #44495C)",
         display : "flex",
         flexDirection: "column",
@@ -46,7 +47,7 @@ const About = () => {
         }}
       >        
         <Box
-          sx={{ display: "flex", flexDirection: isMobile ? "column" : "row", width: "100%", gap: isMobile ? "20px": "10px"}}
+          sx={{ display: "flex", flexDirection: isMobile ? "column" : "row", width: "100%", gap: isMobile ? "80px": "10px"}}
         >
           <Box
             sx={{
