@@ -1,0 +1,12 @@
+.container {
+    .text {
+        font-size: 1.1rem;
+        text-align: left;
+        color: white;
+        margin: 0;
+
+        @media(max-width:768px) {
+            font-size: 0.8rem;
+        }
+    }
+}

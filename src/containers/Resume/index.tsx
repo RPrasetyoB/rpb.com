@@ -1,14 +1,14 @@
+import bg from "../../assets/resume.webp";
+import { ExpTimeline, Hobbies, Rating } from "../../component";
+import theme from "../../Theme";
+import { useEffect, useState } from "react";
 import {
-  Box,
   Card,
   CardContent,
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import bg from "../../assets/resume.webp";
-import { ExpTimeline, Hobbies, Rating } from "../../component";
-import theme from "../../Theme";
-import { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
 
 const Resume = () => {
   const [customBreakpoint, setCustomBreakpoint] = useState<number | undefined>(undefined);

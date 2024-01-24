@@ -1,6 +1,6 @@
-import createTheme from "@mui/material/styles/createTheme";
+import { createTheme } from "@mui/material/styles";
 
-declare module "@mui/material/styles" {
+declare module "@mui/material" {
   interface TypographyVariants {
     logotype?: React.CSSProperties;
   }
@@ -31,7 +31,7 @@ const theme = createTheme({
       fontWeight: 700,
       color: "white",
       '@media (max-width:768px)': {
-        fontSize: '2.2rem',
+        fontSize: '2.4rem',
       }
     },
 
@@ -60,7 +60,7 @@ const theme = createTheme({
       fontSize: "1.4rem",
       color: "white",
       '@media (max-width:768px)': {
-        fontSize: '1.2rem',
+        fontSize: '1.3rem',
       }
     },
 
@@ -70,7 +70,7 @@ const theme = createTheme({
       fontSize: "1.1rem",
       color: "white",
       '@media (max-width:768px)': {
-        fontSize: '0.8rem',
+        fontSize: '0.9rem',
       }
     },
 

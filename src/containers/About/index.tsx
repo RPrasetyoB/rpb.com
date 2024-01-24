@@ -1,7 +1,8 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import photo from "../../assets/rpb.webp";
 import theme from "../../Theme";
+import { Typography, useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const About = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));

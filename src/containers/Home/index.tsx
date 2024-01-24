@@ -1,4 +1,3 @@
-import { Box, IconButton, Typography, useMediaQuery } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -6,6 +5,9 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import bg from "../../assets/table.webp";
 import bgMobile from "../../assets/table2.webp"
 import theme from "../../Theme";
+import { Occupations } from "../../component";
+import { IconButton, Typography, useMediaQuery } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const Home = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -69,7 +71,7 @@ const Home = () => {
             variant="h6"
             sx={{ fontFamily: "Roboto Mono, monospace" }}
           >
-            Software Engineer
+            <Occupations />
           </Typography>
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
