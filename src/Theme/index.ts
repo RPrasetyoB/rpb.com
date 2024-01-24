@@ -1,6 +1,5 @@
 import createTheme from "@mui/material/styles/createTheme";
 
-
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     logotype?: React.CSSProperties;
