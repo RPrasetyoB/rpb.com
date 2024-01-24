@@ -59,12 +59,10 @@ const Navbar =(props: Props) => {
               <MenuIcon />
             </IconButton>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {navItems.map((item) => (
-                <>
-                    <Button key={item} sx={{ color: '#fff', marginRight:"3vw" }}>
-                        {item}
-                    </Button>
-                </>
+              {navItems.map((item, index) => (
+                <Button key={index} sx={{ color: '#fff', marginRight:"3vw" }}>
+                    {item}
+                </Button>
               ))}
             </Box>
           </Toolbar>
