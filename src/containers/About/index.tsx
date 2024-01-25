@@ -68,7 +68,7 @@ const About = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "8vh",
+              gap: isCustomBreakpoint ? "5vh" : "25vh",
               textAlign: isTablet ? "justify" : "left",
             }}
           >
@@ -77,12 +77,9 @@ const About = () => {
               <span style={{ color: "lightskyblue" }}>
                 Renaldi Prasetyo Basuki
               </span>
-              , a passionate software engineer with a love for creating
-              efficient and innovative solutions. I specialize in JavaScript and
-              TypeScript. My journey in the world of technology is driven by a
-              curiosity to solve problems and a commitment to continuous
-              learning. Explore my portfolio and discover the exciting projects
-              I've worked on. Let's build something amazing together!
+              , a dedicated software engineer who thrives on crafting smart solutions.
+              I specialize in JavaScript and TypeScript, and my tech journey is fueled by a passion for problem-solving and continuous learning.
+              Check out my portfolio for some cool projects, and let's collaborate to create something awesome!
             </Typography>
 
             {!isMobile && (
@@ -92,7 +89,7 @@ const About = () => {
                 alignSelf: "center",
                 marginLeft: "-3vw",
                 textAlign: "center",
-                textShadow: "6px 6px 8px rgba(0, 0, 0, 1)"
+                textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)"
               }}
             >
               <HorizontalRuleIcon
