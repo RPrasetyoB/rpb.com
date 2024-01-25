@@ -106,7 +106,7 @@ const Resume = () => {
                   Docker{" "}
                   <div style={{ display: "flex" }}>
                     :&emsp;
-                    <Rating value={3} />
+                    <Rating value={4} />
                   </div>
                 </Typography>
                 <Typography
