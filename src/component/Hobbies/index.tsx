@@ -12,7 +12,7 @@ const Hobbies = () => {
         <Box sx={{ display: "flex", flexDirection: "column", gap: "2vh" }}>
           <Typography
             variant="h4"
-            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "8px 8px 10px rgba(0, 0, 0, 1)" }}
           >
             Hobbies & Interest
           </Typography>

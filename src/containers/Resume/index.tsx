@@ -1,4 +1,5 @@
 import bg from "../../assets/resume.webp";
+import bgMobile from "../../assets/resume2.webp";
 import { ExpTimeline, Hobbies, Rating } from "../../component";
 import theme from "../../Theme";
 import { useEffect, useState } from "react";
@@ -28,7 +29,7 @@ const Resume = () => {
         width: "100svw",
         paddingTop: isMobile ? 0 : "64px",
         paddingBottom: isTablet ? "40px" : 0,
-        backgroundImage: `url(${bg})`,
+        backgroundImage: isMobile ? `url(${bgMobile})` : `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         display: "flex",
@@ -58,7 +59,7 @@ const Resume = () => {
         >
           <Typography
             variant="h4"
-            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}
           >
             Software Engineer Skills
           </Typography>
@@ -179,7 +180,7 @@ const Resume = () => {
         >
           <Typography
             variant="h4"
-            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}
           >
             Languages
           </Typography>
@@ -228,7 +229,7 @@ const Resume = () => {
         >
           <Typography
             variant="h4"
-            sx={{ fontSize: "1.8rem", textAlign: "center" }}
+            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}
           >
             Experience &<br/>Education
           </Typography>

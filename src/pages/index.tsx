@@ -11,9 +11,12 @@ import {
   List,
   ListItem,
   Toolbar,
+  useMediaQuery,
 } from "@mui/material";
 import { About, Home, Resume } from "../containers";
 import { Link, Element } from "react-scroll";
+import logo from '../assets/white logo.png'
+import theme from "../Theme";
 
 interface Props {
   window?: () => Window;
@@ -26,6 +29,7 @@ const MainPage = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState("home");
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -50,7 +54,8 @@ const MainPage = (props: Props) => {
       <Box>
         <CssBaseline />
         <AppBar component="nav" sx={{ bgcolor: "black", maxWidth: "100%" }}>
-          <Toolbar sx={{ paddingLeft: "5vw !important", maxWidth: "100%" }}>
+          <Toolbar sx={{ paddingLeft: "5vw !important", maxWidth: "100%", display:"flex", justifyContent:"space-between" }}>
+            <img src={logo} alt="logo" width={isMobile ? 100 : 120} />
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -91,6 +96,7 @@ const MainPage = (props: Props) => {
         </AppBar>
         <nav>
           <Drawer
+            anchor="right"
             container={container}
             variant="temporary"
             open={mobileOpen}
@@ -116,7 +122,6 @@ const MainPage = (props: Props) => {
                   disablePadding
                   sx={{
                     textAlign: "center",
-                    bgcolor: "black",
                     display: "flex",
                     flexDirection: "column",
                     gap: "20px",
@@ -138,7 +143,7 @@ const MainPage = (props: Props) => {
                           textAlign: "center",
                           color: "white",
                           position: "relative",
-                          paddingRight: "25px",
+                          paddingLeft: "35px",
                           ...(activeSection === item.toLowerCase() && {
                             borderRadius: 0,
                           }),
@@ -152,11 +157,11 @@ const MainPage = (props: Props) => {
                               content: '""',
                               position: "absolute",
                               top: "25%",
-                              right: "0",
+                              left: "0",
                               width: "0",
                               height: "0",
                               borderBottom: "8px solid transparent",
-                              borderRight: "8px solid #fff",
+                              borderLeft: "8px solid #fff",
                               borderTop: "8px solid transparent",
                               transform: "translateY(-50)",
                             }}
