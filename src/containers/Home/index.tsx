@@ -1,7 +1,7 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import bg from "../../assets/table.webp";
 import bgMobile from "../../assets/table2.webp"
 import theme from "../../Theme";
@@ -31,9 +31,9 @@ const Home = () => {
   const redirectToEmail = () => {
     window.location.href = `mailto:${contact.email}`;
   };
-  const redirectToWA = () => {
-    window.open(contact.no, "_blank");
-  };
+  // const redirectToWA = () => {
+  //   window.open(contact.no, "_blank");
+  // };
   return (
     <Box
       sx={{
@@ -76,7 +76,7 @@ const Home = () => {
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <Typography variant="h6">Lets get in touch :</Typography>
-          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
             <IconButton
               sx={{ color: "#ffff", padding: "0", marginRight: "5px" }}
               onClick={() => redirectToLinkedIn()}
@@ -95,12 +95,12 @@ const Home = () => {
             >
               <GitHubIcon sx={{ fontSize: "24px" }} />
             </IconButton>
-            <IconButton
+            {/* <IconButton
               sx={{ color: "#ffff", padding: "0", marginRight: "6px" }}
               onClick={() => redirectToWA()}
             >
               <WhatsAppIcon sx={{ fontSize: "24px" }} />
-            </IconButton>
+            </IconButton> */}
           </Box>
         </Box>
       </Box>

@@ -65,11 +65,12 @@ const About = () => {
           sx= {{ display: "flex", flexDirection: isTablet ? "column" : "row", width: "100%", gap: isMobile ? "15vh" : isTablet ? "80px" : "8vw"}} >
           <Box
             sx={{
+              width: isTablet ? "100%" : "75%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               gap: isCustomBreakpoint ? "5vh" : "25vh",
-              textAlign: isTablet ? "justify" : "left",
+              textAlign: "justify",
             }}
           >
             <Typography variant="h6" sx={{textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}>
@@ -77,9 +78,9 @@ const About = () => {
               <span style={{ color: "lightskyblue" }}>
                 Renaldi Prasetyo Basuki
               </span>
-              , a dedicated software engineer who thrives on crafting smart solutions.
-              I specialize in JavaScript and TypeScript, and my tech journey is fueled by a passion for problem-solving and continuous learning.
-              Check out my portfolio for some cool projects, and let's collaborate to create something awesome!
+              , a dedicated software & Web Developer driven by a passion for solving problems and continuous learning.
+              I specialize in JavaScript and TypeScript, but I'm ready to tackle any tech challenge that comes my way.
+              Explore my portfolio for a glimpse of exciting projects, and let's collaborate to craft something awesome together!
             </Typography>
 
             {!isMobile && (

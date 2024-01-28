@@ -1,6 +1,6 @@
 import bg from "../../assets/resume.webp";
 import bgMobile from "../../assets/resume2.webp";
-import { ExpTimeline, Hobbies, Rating } from "../../component";
+import { CarouselBE, CarouselFE, ExpTimeline, Hobbies, Rating } from "../../component";
 import theme from "../../Theme";
 import { useEffect, useState } from "react";
 import {
@@ -61,113 +61,11 @@ const Resume = () => {
             variant="h4"
             sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}
           >
-            Software Engineer Skills
+            Developer tools
           </Typography>
-          <Box>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.6)" }}>
-              <CardContent>
-                <Typography variant="h5">
-                  <u style={{ textDecorationColor: "#005BB8" }}>Back-End</u>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  Express{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={5} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  PostgreSQL{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={4} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  Mongo{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={4} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  Docker{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={4} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  Rest API
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={5} />
-                  </div>
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.6)" }}>
-              <CardContent>
-                <Typography variant="h5" sx={{ fontWeight: 700 }}>
-                  <u style={{ textDecorationColor: "#005BB8" }}>Front-End</u>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  React{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={5} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  HTML5{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={5} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  SASS{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={4} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  Component<br/>Libraries{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={5} />
-                  </div>
-                </Typography>
-              </CardContent>
-            </Card>
+          <Box sx={{display:"flex", flexDirection:"column", gap:"10px"}}>
+            <CarouselBE />
+            <CarouselFE />
           </Box>
         </Box>
         <Box
