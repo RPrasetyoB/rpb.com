@@ -30,7 +30,7 @@ function CarouselCube() {
         grabCursor={true}
         loop={true}
         modules={[EffectCube, Pagination, Navigation, Autoplay]}
-        autoplay={{ delay: 0 }}
+        autoplay={{ delay: 200 }}
         className="swiper_container"
         style={{ height: "180px", width:"180px", paddingBottom: "5px" }}
       >
