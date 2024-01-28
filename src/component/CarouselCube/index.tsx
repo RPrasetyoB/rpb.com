@@ -24,7 +24,6 @@ function CarouselCube() {
         Others
       </Typography>
       <Swiper
-        cssMode={true}
         speed={1000}
         pagination={false}
         effect="cube"
