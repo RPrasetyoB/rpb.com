@@ -2,8 +2,6 @@ import { Navigation, Pagination, EffectCube, Autoplay } from "swiper/modules";
 import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
 import "swiper/scss/effect-cube";
 import styles from "./carousel.module.scss";
 
@@ -30,7 +28,7 @@ function CarouselCube() {
         grabCursor={true}
         loop={true}
         modules={[EffectCube, Pagination, Navigation, Autoplay]}
-        autoplay={{ delay: 200 }}
+        autoplay={{ delay: 500 }}
         className="swiper_container"
         style={{ height: "180px", width:"180px", paddingBottom: "5px" }}
       >
