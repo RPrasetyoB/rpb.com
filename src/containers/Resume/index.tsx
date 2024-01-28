@@ -1,6 +1,6 @@
 import bg from "../../assets/resume.webp";
 import bgMobile from "../../assets/resume2.webp";
-import { CarouselBE, CarouselFE, ExpTimeline, Hobbies, Rating } from "../../component";
+import { CarouselBE, CarouselCube, CarouselFE, ExpTimeline, Hobbies } from "../../component";
 import theme from "../../Theme";
 import { useEffect, useState } from "react";
 import {
@@ -27,7 +27,6 @@ const Resume = () => {
         height: isTablet ? "auto" : "100svh",
         minHeight: isTablet ? "100svh" : "",
         width: "100svw",
-        paddingTop: isMobile ? 0 : "64px",
         paddingBottom: isTablet ? "40px" : 0,
         backgroundImage: isMobile ? `url(${bgMobile})` : `url(${bg})`,
         backgroundSize: "cover",
@@ -66,47 +65,7 @@ const Resume = () => {
           <Box sx={{display:"flex", flexDirection:"column", gap:"10px"}}>
             <CarouselBE />
             <CarouselFE />
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "2vh",
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}
-          >
-            Languages
-          </Typography>
-          <Box>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.9)" }}>
-              <CardContent>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  Indonesian{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={6} />
-                  </div>
-                </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  English{" "}
-                  <div style={{ display: "flex" }}>
-                    :&emsp;
-                    <Rating value={4} />
-                  </div>
-                </Typography>
-              </CardContent>
-            </Card>
+            <CarouselCube />
           </Box>
         </Box>
         {(isTablet && !isCustomBreakpoint) && (<Hobbies />)}
@@ -132,7 +91,7 @@ const Resume = () => {
             Experience &<br/>Education
           </Typography>
           <Box sx={{ maxWidth: isTablet ? "350px" : "500px" }}>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.9)" }}>
+            <Card sx={{ bgcolor: "#31313bce" }}>
               <CardContent>
                 <ExpTimeline />
               </CardContent>
