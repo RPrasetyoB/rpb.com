@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "swiper/scss/effect-cube";
+import "swiper/scss/autoplay";
 import styles from "./carousel.module.scss";
 
 import slide_image_1 from "../../assets/utils/img1.svg";
