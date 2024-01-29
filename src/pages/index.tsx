@@ -182,7 +182,7 @@ const MainPage = (props: Props) => {
       <Element name="about">
         <About />
       </Element>
-      <Element name="resume">
+      <Element name="resume" style={{minHeight:"120vh"}}>
         <Resume />
       </Element>
     </>
