@@ -24,11 +24,10 @@ const Resume = () => {
   return (
     <Box
       sx={{
-        height: isTablet ? "auto" : "100svh",
-        minHeight: isTablet ? "100svh" : "110vh",
+        minHeight: isTablet ? "100svh" : "100vh",
         width: "100svw",
-        paddingBottom: isTablet ? "40px" : "100px",
-        paddingTop: isTablet ? "40px" : "100px",
+        paddingBottom: isTablet ? "40px" : "60px",
+        paddingTop: isTablet ? "40px" : "60px",
         backgroundImage: isMobile ? `url(${bgMobile})` : `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",

@@ -25,11 +25,17 @@ function CarouselCube() {
       <Swiper
         speed={1000}
         pagination={false}
-        effect="cube"
+        effect={'cube'}
         grabCursor={true}
         loop={true}
         modules={[EffectCube, Autoplay]}
         autoplay={{ delay: 0 }}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        }}
         className="swiper_container"
         style={{ height: "180px", width:"180px", paddingBottom: "5px" }}
       >

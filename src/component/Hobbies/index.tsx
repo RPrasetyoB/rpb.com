@@ -17,7 +17,7 @@ const Hobbies = () => {
             Hobbies & Interest
           </Typography>
           <Box sx={{ maxWidth: "500px" }}>
-            <Card sx={{ bgcolor: "rgba(0, 0, 0, 0.6)" }}>
+            <Card sx={{ bgcolor: "#DDE6ED"}}>
               <CardContent>
                 <Box
                   sx={{
