@@ -1,9 +1,6 @@
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import photo from "../../assets/rpb.webp";
 import bg from "../../assets/about.webp";
-import bgCustom from "../../assets/about1.webp";
-import bgMobile from "../../assets/about2.webp";
-import bgTablet from "../../assets/about3.webp";
 import theme from "../../Theme";
 import { Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -30,13 +27,13 @@ const About = () => {
         height: "auto",
         minHeight: "100svh",
         gap: isTablet ? "5vw" : "10px",
-        backgroundImage: isTablet ? `url(${bgTablet})` : isMobile ? `url(${bgMobile})` : isCustomBreakpoint ? `url(${bgCustom})` : `url(${bg})`,
+        backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: isTablet ? "center bottom" : "center right",
         display : "flex",
         flexDirection: "column",
         justifyContent:"center",
-        overflow:"hidden"
+        overflow:"hidden",
       }}
     >
         <Typography
@@ -62,7 +59,7 @@ const About = () => {
         }}
       >        
         <Box
-          sx= {{ display: "flex", flexDirection: isTablet ? "column" : "row", width: "100%", gap: isMobile ? "15vh" : isTablet ? "80px" : "8vw"}} >
+          sx= {{ display: "flex", flexDirection: isTablet ? "column" : "row", width: "100%", gap: isMobile ? "8vh" : isTablet ? "80px" : "8vw"}} >
           <Box
             sx={{
               width: isTablet ? "100%" : "75%",
