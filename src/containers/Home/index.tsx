@@ -80,6 +80,7 @@ const Home = () => {
               <IconButton
                 sx={{ color: "#ffff", padding: "0", margin: "auto"  }}
                 onClick={() => redirectToLinkedIn()}
+                aria-label="linkedin button"
               >
                 <LinkedInIcon sx={{ fontSize: "28px", padding: "0", "&:hover":{fontSize: "38px"}, transition: "font-size 0.3s ease-in-out"}} />
               </IconButton>
@@ -88,6 +89,7 @@ const Home = () => {
               <IconButton
                 sx={{ color: "#ffff", padding: "0", margin: "auto" }}
                 onClick={() => redirectToEmail()}
+                aria-label="email button"
               >
                 <EmailIcon sx={{ fontSize: "30px", "&:hover":{fontSize: "40px"}, transition: "font-size 0.3s ease-in-out" }} />
               </IconButton>
@@ -96,8 +98,9 @@ const Home = () => {
               <IconButton
                 sx={{ color: "#ffff", padding: "0", margin: "auto"  }}
                 onClick={() => redirectToGitHub()}
+                aria-label="github button"
               >
-                <GitHubIcon sx={{ fontSize: "24px", "&:hover":{fontSize: "34px"}, transition: "font-size 0.3s ease-in-out" }} />
+                <GitHubIcon sx={{ fontSize: "24px", "&:hover":{fontSize: "34px"}, transition: "font-size 0.3s ease-in-out" }}/>
               </IconButton>
             </span>            
           </Box>
