@@ -71,13 +71,13 @@ const About = () => {
             }}
           >
             <Typography variant="h6" sx={{textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}>
-              Hello! I'm{" "}
               <span style={{ color: "lightskyblue" }}>
                 Renaldi Prasetyo Basuki
               </span>
-              a dedicated software & Web Developer driven by a passion for solving problems and continuous learning.
-              I specialize in JavaScript and TypeScript, but I'm ready to tackle any tech challenge that comes my way.
-              Explore my portfolio for a glimpse of exciting projects, and let's collaborate to craft something awesome together!
+              &nbsp;is a proficient web developer and software engineer specializing in React JS, Next JS, Express JS, MySQL, PostgreSQL, and MongoDB.
+              His extensive background in service engineering has finely tuned his efficient problem-solving skills, significantly influencing his approach to web and 
+              software development. Committed to delivering both creative and efficient solutions, Renaldi aims to be a valuable asset in contributing to innovative projects
+               as a flexible developer that can focus on Back-end or Front-end, while remaining adaptable to the ever-changing landscape of the field.
             </Typography>
 
             {!isMobile && (
