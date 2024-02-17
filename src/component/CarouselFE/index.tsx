@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import styles from "./carousel.module.scss";
@@ -159,7 +159,7 @@ function CarouselFE() {
         >
           <img src={slide_image_7} width={100} alt="slide_image" />
         </SwiperSlide>
-        <div
+        {/* <div
           className="slider-controler"
           style={{ position: "relative", width: "100%" }}
         >
@@ -200,7 +200,7 @@ function CarouselFE() {
               }}
             />
           </div>
-        </div>
+        </div> */}
       </Swiper>
     </div>
   );

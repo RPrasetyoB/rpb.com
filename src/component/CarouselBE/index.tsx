@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import style from "./carousel.module.scss";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -203,7 +203,7 @@ function CarouselBE() {
         >
           <img src={slide_image_10} width={100} alt="slide_image" />
         </SwiperSlide>
-        <div
+        {/* <div
           className="slider-controler"
           style={{ position: "relative", width: "100%" }}
         >
@@ -244,7 +244,7 @@ function CarouselBE() {
               }}
             />
           </div>
-        </div>
+        </div> */}
       </Swiper>
     </div>
   );
