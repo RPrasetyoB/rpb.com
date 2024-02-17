@@ -116,6 +116,7 @@ const Home = () => {
             maskImage:
               isMobile ? "linear-gradient(to right, transparent 0%, black 20%, transparent 97%)" : "linear-gradient(to right, transparent 0%, black 5%, transparent 97%)",
           }}
+          alt="background image"
         />
       </Box>
     </Box>
