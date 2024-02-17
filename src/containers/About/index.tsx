@@ -3,8 +3,8 @@ import photo from "../../assets/rpb.webp";
 import bg from "../../assets/about.webp";
 import theme from "../../Theme";
 import { Typography, useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
+import Box from "@mui/material/Box";
 
 const About = () => {
   const [customBreakpoint, setCustomBreakpoint] = useState<number | undefined>(undefined);
@@ -75,7 +75,7 @@ const About = () => {
               <span style={{ color: "lightskyblue" }}>
                 Renaldi Prasetyo Basuki
               </span>
-              , a dedicated software & Web Developer driven by a passion for solving problems and continuous learning.
+              a dedicated software & Web Developer driven by a passion for solving problems and continuous learning.
               I specialize in JavaScript and TypeScript, but I'm ready to tackle any tech challenge that comes my way.
               Explore my portfolio for a glimpse of exciting projects, and let's collaborate to craft something awesome together!
             </Typography>

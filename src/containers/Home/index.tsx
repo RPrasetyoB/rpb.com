@@ -1,13 +1,13 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
-// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import bg from "../../assets/table.webp";
 import bgMobile from "../../assets/table2.webp"
 import theme from "../../Theme";
 import { Occupations } from "../../component";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
+import Tsparticle from "../../component/Tsparticle";
 
 const Home = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -31,9 +31,6 @@ const Home = () => {
   const redirectToEmail = () => {
     window.location.href = `mailto:${contact.email}`;
   };
-  // const redirectToWA = () => {
-  //   window.open(contact.no, "_blank");
-  // };
   return (
     <Box
       sx={{
@@ -46,6 +43,7 @@ const Home = () => {
         overflow: "hidden",
       }}
     >
+      <Tsparticle />
       <Box
         sx={{
           display: "flex",

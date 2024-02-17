@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Box } from "@mui/material";
 import styles from "./Occupation.module.scss";
+import Box  from "@mui/material/Box";
 
 const items = [
   {
