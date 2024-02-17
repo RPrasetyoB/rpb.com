@@ -93,6 +93,7 @@ const Navbar = (props: Props) => {
                   style={{width:"100px"}}
                 >
                   <Button
+                    href="#"
                     sx={{
                       color: "#fff",
                       margin: "auto",
@@ -157,6 +158,7 @@ const Navbar = (props: Props) => {
                     onSetActive={() => handleSetActive(item.toLowerCase())}
                   >
                     <Button
+                      href="#"
                       sx={{
                         textAlign: "center",
                         color: "white",
