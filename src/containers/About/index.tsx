@@ -37,7 +37,7 @@ const About = () => {
       }}
     >
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{
             fontWeight: 800,
             fontFamily: "Rubik, system-ui",
@@ -117,6 +117,7 @@ const About = () => {
                 style={{
                   maxHeight: isTablet ? "40vh" : "70vh",
                   objectFit: "contain",
+                  paddingTop: "-40px"
                 }}
               />
             </Box>

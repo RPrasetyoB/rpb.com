@@ -40,7 +40,7 @@ const theme = createTheme({
       fontWeight: 700,
       color: "white",
       '@media (max-width:768px)': {
-        fontSize: '1.6rem',
+        fontSize: '2rem',
       }
     },
 
@@ -66,7 +66,7 @@ const theme = createTheme({
 
     h6: {
       fontFamily: "Poppins, sans-serif",
-      fontWeight: 500,
+      fontWeight: 200,
       fontSize: "1.1rem",
       color: "white",
       '@media (max-width:768px)': {
