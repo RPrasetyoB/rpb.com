@@ -20,9 +20,10 @@ const About = () => {
   return (
     <Box
       sx={{
+        paddingTop: isMobile ? 0 : "60px",
         paddingRight: "8vw",
         paddingLeft: "6vw",
-        paddingBottom: isTablet ? "5vh" : isMobile ? 0 :"auto",
+        paddingBottom: isTablet ? "5vh" : isMobile ? 0 : "40px",
         width: "100svw",
         height: "auto",
         minHeight: "100svh",
@@ -59,7 +60,7 @@ const About = () => {
         }}
       >        
         <Box
-          sx= {{ display: "flex", flexDirection: isTablet ? "column" : "row", width: "100%", gap: isMobile ? "8vh" : isTablet ? "80px" : "8vw"}} >
+          sx= {{ display: "flex", flexDirection: isTablet ? "column" : "row", width: "100%", gap: isMobile ? "8vh" : isTablet ? "30px" : "8vw"}} >
           <Box
             sx={{
               width: isTablet ? "100%" : "75%",
@@ -117,7 +118,7 @@ const About = () => {
                 style={{
                   maxHeight: isTablet ? "40vh" : "70vh",
                   objectFit: "contain",
-                  paddingTop: "-40px"
+                  paddingTop: "-60px"
                 }}
               />
             </Box>
