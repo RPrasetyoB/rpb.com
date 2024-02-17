@@ -28,7 +28,15 @@ const Navbar = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState("home");
+  const [customBreakpoint, setCustomBreakpoint] = React.useState<number | undefined>(undefined);
+
+  React.useEffect(() => {
+    setCustomBreakpoint(1200);
+  }, []);
+
+  const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -60,7 +68,7 @@ const Navbar = (props: Props) => {
             src={logo}
             alt="logo"
             width={isMobile ? 50 : 70}
-            style={{ marginLeft: isMobile ? 7 : "4vw" }}
+            style={{ marginLeft: isMobile ? 7 : isCustomBreakpoint ? "4vw" : "4.5vw" }}
           />
           <IconButton
             color="inherit"
@@ -71,31 +79,34 @@ const Navbar = (props: Props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap:"20px", marginRight:"3vw", alignItems:"center"}}>
             {navItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.toLowerCase()}
-                spy={true}
-                smooth={true}
-                duration={500}
-                offset={-5}
-                activeClass="active"
-                onSetActive={() => handleSetActive(item.toLowerCase())}
-              >
-                <Button
-                  sx={{
-                    color: "#fff",
-                    marginRight: "3vw",
-                    ...(activeSection === item.toLowerCase() && {
-                      borderBottom: "2px solid #fff",
-                      borderRadius: 0,
-                    }),
-                  }}
+                <Link
+                  key={index}
+                  to={item.toLowerCase()}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  offset={-5}
+                  activeClass="active"
+                  onSetActive={() => handleSetActive(item.toLowerCase())}
+                  style={{width:"100px"}}
                 >
-                  {item}
-                </Button>
-              </Link>
+                  <Button
+                    sx={{
+                      color: "#fff",
+                      margin: "auto",
+                      "&:hover": { fontSize: "1rem" } ,
+                      transition: "font-size 0.3s ease-in-out",
+                      ...(activeSection === item.toLowerCase() && {
+                        borderBottom: "2px solid #fff",
+                        borderRadius: 0,
+                      }),
+                    }}
+                  >
+                    {item}
+                    </Button>                           
+                </Link>
             ))}
           </Box>
         </Toolbar>

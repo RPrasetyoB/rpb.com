@@ -75,31 +75,31 @@ const Home = () => {
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <Typography variant="h6">Lets get in touch :</Typography>
-          <Box sx={{ display: "flex", alignItems: "center", gap: "30px" }}>
-            <IconButton
-              sx={{ color: "#ffff", padding: "0", marginRight: "5px" }}
-              onClick={() => redirectToLinkedIn()}
-            >
-              <LinkedInIcon sx={{ fontSize: "28px", padding: "0" }} />
-            </IconButton>
-            <IconButton
-              sx={{ color: "#ffff", padding: "0", marginRight: "5px" }}
-              onClick={() => redirectToEmail()}
-            >
-              <EmailIcon sx={{ fontSize: "30px" }} />
-            </IconButton>
-            <IconButton
-              sx={{ color: "#ffff", padding: "0", marginRight: "6px" }}
-              onClick={() => redirectToGitHub()}
-            >
-              <GitHubIcon sx={{ fontSize: "24px" }} />
-            </IconButton>
-            {/* <IconButton
-              sx={{ color: "#ffff", padding: "0", marginRight: "6px" }}
-              onClick={() => redirectToWA()}
-            >
-              <WhatsAppIcon sx={{ fontSize: "24px" }} />
-            </IconButton> */}
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "50px", width: "75%" }}>
+            <span style={{width:"45px"}}>
+              <IconButton
+                sx={{ color: "#ffff", padding: "0", margin: "auto"  }}
+                onClick={() => redirectToLinkedIn()}
+              >
+                <LinkedInIcon sx={{ fontSize: "28px", padding: "0", "&:hover":{fontSize: "38px"}, transition: "font-size 0.3s ease-in-out"}} />
+              </IconButton>
+            </span>
+            <span style={{width:"45px"}}>
+              <IconButton
+                sx={{ color: "#ffff", padding: "0", margin: "auto" }}
+                onClick={() => redirectToEmail()}
+              >
+                <EmailIcon sx={{ fontSize: "30px", "&:hover":{fontSize: "40px"}, transition: "font-size 0.3s ease-in-out" }} />
+              </IconButton>
+            </span>
+            <span style={{width:"45px"}}>
+              <IconButton
+                sx={{ color: "#ffff", padding: "0", margin: "auto"  }}
+                onClick={() => redirectToGitHub()}
+              >
+                <GitHubIcon sx={{ fontSize: "24px", "&:hover":{fontSize: "34px"}, transition: "font-size 0.3s ease-in-out" }} />
+              </IconButton>
+            </span>            
           </Box>
         </Box>
       </Box>
