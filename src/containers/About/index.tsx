@@ -120,6 +120,7 @@ const About = () => {
                   objectFit: "contain",
                   paddingTop: "-60px"
                 }}
+                alt="renaldi photo"
               />
             </Box>
         </Box>
