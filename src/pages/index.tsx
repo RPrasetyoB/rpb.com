@@ -60,6 +60,11 @@ const MainPage = (props: Props) => {
           opacity: 0,
           duration: 1.5,
         })
+        .to("#intro-slider", {
+          xPercent: "-100",
+          opacity: 0,
+          duration: 0.1,
+        })
         .from("#welcome", {
           opacity: 0,
           duration: 0.5,
@@ -87,8 +92,8 @@ const MainPage = (props: Props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <div style={{background:"black"}}>
-      <Box ref={comp}>
+    <div style={{background:"black", width:"100vw"}}>
+      <Box ref={comp} sx={{maxWidth:"100%", overflowX:"hidden"}}>
         <div
           id="intro-slider"
           style={{
@@ -107,10 +112,10 @@ const MainPage = (props: Props) => {
             alignItems:"center"
           }}
         > 
-          <h1 id="title-1" style={{fontSize: isMobile ? 25 : isTablet ? 50 : 100}}>
+          <h1 id="title-1" style={{fontSize: isMobile ? 25 : isTablet ? 40 : 60}}>
             Welcome to My Website
           </h1>
-          <h1 id="title-2" style={{fontSize: isMobile ? 15 : isTablet ? 30 : 60, fontFamily: "Rubik Doodle Shadow, system-ui"}}>
+          <h1 id="title-2" style={{fontSize: isMobile ? 15 : isTablet ? 30 : 40, fontFamily: "Rubik Doodle Shadow, system-ui"}}>
             THANKS FOR VISITING
           </h1>
           <Starfall />
@@ -121,19 +126,17 @@ const MainPage = (props: Props) => {
             <AppBar component="nav" sx={{ bgcolor: "black", maxWidth:"100%"}}>
               <Toolbar
                 sx={{
-                  paddingLeft: "5vw !important",
-                  maxWidth: "100%",
                   display: "flex",
                   justifyContent: "space-between",
                 }}
               >
-                <img src={logo} alt="logo" width={isMobile ? 50 : 70} />
+                <img src={logo} alt="logo" width={isMobile ? 50 : 70} style={{marginLeft: isMobile ? 7 : "4vw"}} />
                 <IconButton
                   color="inherit"
                   aria-label="open drawer"
                   edge="start"
                   onClick={handleDrawerToggle}
-                  sx={{ mr: 2, display: { sm: "none" } }}
+                  sx={{display: { sm: "none" } }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -173,8 +176,9 @@ const MainPage = (props: Props) => {
                 variant="temporary"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
+                SlideProps={{ unmountOnExit: true }}
                 ModalProps={{
-                  keepMounted: true,
+                  keepMounted: false,
                 }}
                 sx={{
                   display: { xs: "block", sm: "none" },

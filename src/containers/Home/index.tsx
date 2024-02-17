@@ -11,6 +11,7 @@ import Tsparticle from "../../component/Tsparticle";
 
 const Home = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   
   const contact = {
     name: "Renaldi P. Basuki",
@@ -48,7 +49,7 @@ const Home = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          paddingLeft: "4vw",
+          paddingLeft: isMobile ? 3 : isTablet? "8vw" : "6vw",
           justifyContent: "space-around",
         }}
       >
