@@ -1,21 +1,21 @@
-import { ThemeProvider } from '@mui/material';
 import './App.css';
-import theme from './Theme';
 import MainPage from './pages';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import CustomThemeProvider from './Theme';
+import { GlobalState } from './utils';
 
 function App() {
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
+    <GlobalState>
+      <CustomThemeProvider>
         <Router>
           <Routes>
             <Route path='/*' element={<MainPage />}/>          
           </Routes>
         </Router>
-      </ThemeProvider>
-    </>
+      </CustomThemeProvider>
+    </GlobalState>
   )
 }
 

@@ -12,10 +12,12 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { Link } from "react-scroll";
-import logo from "../../assets/white logo.png";
-import theme from "../../Theme";
+import whiteLogo from "../../assets/white logo.png";
+import blackLogo from "../../assets/black logo.png";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
+import { ModeState } from "../../utils/GlobalState";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 interface Props {
   window?: () => Window;
@@ -26,6 +28,7 @@ const navItems = ["Home", "About", "Resume"];
 
 const Navbar = (props: Props) => {
   const { window } = props;
+  const { darkMode, setDarkMode } = React.useContext(ModeState);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState("home");
   const [customBreakpoint, setCustomBreakpoint] = React.useState<number | undefined>(undefined);
@@ -35,7 +38,7 @@ const Navbar = (props: Props) => {
   }, []);
 
   const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -51,13 +54,18 @@ const Navbar = (props: Props) => {
     setActiveSection(to);
   };
 
+  const toggleDarkMode = (checked: boolean) => {
+    setDarkMode(checked);
+  };
+
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box>
       <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: "black", maxWidth: "100%" }}>
+      <AppBar component="nav" sx={{ background: darkMode ? "black" : "rgba(238, 245, 255, 0.5)", maxWidth: "100%", transition : "background 0.8s ease-in-out", backdropFilter: darkMode ? "none" : "blur(20px)",
+    WebkitBackdropFilter: darkMode ? "none" : "blur(20px)" }}>
         <Toolbar
           sx={{
             display: "flex",
@@ -65,21 +73,34 @@ const Navbar = (props: Props) => {
           }}
         >
           <img
-            src={logo}
+            src={darkMode ? whiteLogo : blackLogo}
             alt="logo"
             width={isMobile ? 50 : 70}
             style={{ marginLeft: isMobile ? 7 : isCustomBreakpoint ? "4vw" : "4.5vw" }}
           />
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box sx={{ display: { xs: "none", sm: "flex" }, gap:"20px", marginRight:"3vw", alignItems:"center"}}>
+          <Box sx={{ display: { sm: "none", xs: "flex" }, alignItems: "center" }}>
+            <DarkModeSwitch
+              style={{ marginRight: 50 }}
+              checked={darkMode}
+              onChange={toggleDarkMode}
+              size={20}
+            />
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon sx={{color : darkMode ? "white" : "black"}} />
+            </IconButton>
+          </Box>          
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: "1vw", marginRight:"2vw", alignItems:"center"}}>
+            <DarkModeSwitch
+              style={{ marginRight: 50 }}
+              checked={darkMode}
+              onChange={toggleDarkMode}
+              size={20}
+            />
             {navItems.map((item, index) => (
                 <Link
                   key={index}
@@ -95,12 +116,12 @@ const Navbar = (props: Props) => {
                 >
                   <Button
                     sx={{
-                      color: "#fff",
+                      color: darkMode ? "white" : "black",
                       margin: "auto",
                       "&:hover": { fontSize: "1rem" } ,
                       transition: "font-size 0.3s ease-in-out",
                       ...(activeSection === item.toLowerCase() && {
-                        borderBottom: "2px solid #fff",
+                        borderBottom: darkMode ? "2px solid #fff" : "2px solid #000",
                         borderRadius: 0,
                       }),
                     }}

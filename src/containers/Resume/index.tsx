@@ -1,7 +1,6 @@
 import bg from "../../assets/resume.webp";
 import bgMobile from "../../assets/resume2.webp";
 import { CarouselBE, CarouselCube, CarouselFE, ExpTimeline, Hobbies } from "../../component";
-import theme from "../../Theme";
 import { useEffect, useState } from "react";
 import {
   Card,
@@ -19,8 +18,8 @@ const Resume = () => {
   }, []);
 
   const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery('(max-width:600px)');
+  const isTablet = useMediaQuery('(max-width:960px)');
   return (
     <Box
       sx={{

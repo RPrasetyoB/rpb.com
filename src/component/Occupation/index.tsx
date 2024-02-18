@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Occupation.module.scss";
 import Box  from "@mui/material/Box";
+import { ModeState } from "../../utils/GlobalState";
 
 const items = [
   {
@@ -54,9 +55,10 @@ const Test01 = () => {
 };
 
 const Occupations = () => {
+  const { darkMode } = useContext(ModeState);
   return (
     <Box className={styles.container}>
-        <div className={styles.text}>
+        <div className={styles.text} style={{color: darkMode ? "white" : "black"}}>
             <Test01 />
         </div>
     </Box>

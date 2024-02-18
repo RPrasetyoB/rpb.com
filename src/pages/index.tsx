@@ -2,7 +2,6 @@ import * as React from "react";
 import { useMediaQuery} from "@mui/material";
 import { About, Home, Navbar, Resume } from "../containers";
 import { Element } from "react-scroll";
-import theme from "../Theme";
 import gsap from "gsap";
 import Box from "@mui/material/Box";
 import { Starfall } from "../component";
@@ -13,8 +12,8 @@ interface Props {
 
 const MainPage = (props: Props) => {
   const { window } = props;
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery('(max-width:600px)');
+  const isTablet = useMediaQuery('(max-width:960px)');
 
   const comp = React.useRef(null);
 

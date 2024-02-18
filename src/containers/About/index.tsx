@@ -1,21 +1,23 @@
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import photo from "../../assets/rpb.webp";
-import bg from "../../assets/about.webp";
-import theme from "../../Theme";
+import realPhoto from "../../assets/profile/real.webp";
+import animatedPhoto from "../../assets/profile/anime.webp";
+import bgLight from "../../assets/about/about-light.jpg";
+import bgDark from "../../assets/about/about-dark.webp";
 import { Typography, useMediaQuery } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-
+import { ModeState } from "../../utils/GlobalState";
 const About = () => {
   const [customBreakpoint, setCustomBreakpoint] = useState<number | undefined>(undefined);
+  const { darkMode } = useContext(ModeState);
 
   useEffect(() => {
     setCustomBreakpoint(1200);
   }, []);
 
   const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery('(max-width:600px)');
+  const isTablet = useMediaQuery('(max-width:960px)');
 
   return (
     <Box
@@ -28,13 +30,13 @@ const About = () => {
         height: "auto",
         minHeight: "100svh",
         gap: isTablet ? "5vw" : "10px",
-        backgroundImage: `url(${bg})`,
+        backgroundImage: darkMode ? `url(${bgDark})` : `url(${bgLight})`,
         backgroundSize: "cover",
-        backgroundPosition: isTablet ? "center bottom" : "center right",
         display : "flex",
         flexDirection: "column",
         justifyContent:"center",
         overflow:"hidden",
+        transition: "background-image 0.8s ease-in-out"
       }}
     >
         <Typography
@@ -44,6 +46,7 @@ const About = () => {
             fontFamily: "Rubik, system-ui",
             paddingTop: isTablet ? "64px" : 0,
             marginBottom: isMobile ? "65px" : 0,
+            textShadow: darkMode ? "none" : "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)"
           }}
         >
           ABOUT
@@ -71,8 +74,8 @@ const About = () => {
               textAlign: "justify",
             }}
           >
-            <Typography variant="h6" sx={{textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)",}}>
-              <span style={{ color: "lightskyblue" }}>
+            <Typography variant="h6" sx={{textShadow: "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)", fontWeight: darkMode ? "auto" : 500}}>
+              <span style={{ color: darkMode ? "lightskyblue" : "blue" }}>
                 Renaldi Prasetyo Basuki
               </span>
               &nbsp;is a proficient web developer and software engineer specializing in React JS, Next JS, Express JS, MySQL, PostgreSQL, and MongoDB.
@@ -88,13 +91,13 @@ const About = () => {
                 alignSelf: "center",
                 marginLeft: "-3vw",
                 textAlign: "center",
-                textShadow: "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)"
+                textShadow: "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)"
               }}
             >
               <HorizontalRuleIcon
                 sx={{ color: "lightskyblue", alignSelf: "center" }}
               />
-              <Typography variant="body1" sx={{ maxWidth: isMobile ? "26vw" : "20vw" }}>
+              <Typography variant="body1" sx={{ maxWidth: isMobile ? "26vw" : "20vw", fontWeight: darkMode ? "auto" : 500 }}>
                 Banyuwangi, East-Java, Indonesia
               </Typography>
               <HorizontalRuleIcon
@@ -114,11 +117,12 @@ const About = () => {
               }}
             >
               <img
-                src={photo}
+                className="about-photo"
+                src={darkMode ? realPhoto : animatedPhoto}
                 style={{
                   maxHeight: isTablet ? "40vh" : "70vh",
                   objectFit: "contain",
-                  paddingTop: "-60px"
+                  paddingTop: "-60px",
                 }}
                 alt="renaldi photo"
               />

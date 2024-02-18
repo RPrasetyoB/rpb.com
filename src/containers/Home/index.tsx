@@ -1,17 +1,25 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import bg from "../../assets/table.webp";
-import bgMobile from "../../assets/table2.webp"
-import theme from "../../Theme";
-import { Occupations } from "../../component";
+import bg from "../../assets/home/home-image.webp";
+import bg2 from "../../assets/home/home-image - BW.webp"
+import { Leaf, Occupations } from "../../component";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
 import Tsparticle from "../../component/Tsparticle";
+import React from "react";
+import { ModeState } from "../../utils/GlobalState";
 
 const Home = () => {
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+  const [customBreakpoint, setCustomBreakpoint] = React.useState<number | undefined>(undefined);
+  const { darkMode } = React.useContext(ModeState);
+
+  React.useEffect(() => {
+    setCustomBreakpoint(768);
+  }, []);
+  const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
+  const isMobile = useMediaQuery('(max-width:600px)');
+  const isTablet = useMediaQuery('(max-width:960px)');
   
   const contact = {
     name: "Renaldi P. Basuki",
@@ -37,14 +45,15 @@ const Home = () => {
       sx={{
         height: "100svh",
         width: "100svw",
-        paddingTop: "64px",
-        bgcolor: "#030303",
+        paddingTop: "40px",
+        background: darkMode ? "#030303" : "#EEF5FF",
         display: "flex",
         justifyContent: "space-between",
         overflow: "hidden",
+        transition: "background 0.8s ease-in-out"
       }}
     >
-      <Tsparticle />
+      {darkMode ? (<Tsparticle />) : (<Leaf />)}
       <Box
         sx={{
           display: "flex",
@@ -55,19 +64,19 @@ const Home = () => {
       >
         <Box>
           <Typography
-            variant="h5"
+            variant="h2"
             sx={{ fontFamily: "Rubik Doodle Shadow, system-ui" }}
           >
             RENALDI PRASETYO
           </Typography>
           <Typography
             variant="h2"
-            sx={{ fontFamily: "Rubik, system-ui", marginLeft: "-4px" }}
+            sx={{ fontFamily: "Rubik Doodle Shadow, system-ui" }}
           >
             BASUKI
           </Typography>
           <Typography
-            variant="h6"
+            variant="h4"
             sx={{ fontFamily: "Roboto Mono, monospace" }}
           >
             <Occupations />
@@ -75,10 +84,10 @@ const Home = () => {
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <Typography variant="h6">Lets get in touch :</Typography>
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "50px", width: "75%" }}>
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "50px", width: isCustomBreakpoint ? "70%" : "60%" }}>
             <span style={{width:"45px"}}>
               <IconButton
-                sx={{ color: "#ffff", padding: "0", margin: "auto"  }}
+                sx={{ color: darkMode ? "#ffff" : "black", padding: "0", margin: "auto"  }}
                 onClick={() => redirectToLinkedIn()}
                 aria-label="linkedin button"
               >
@@ -87,7 +96,7 @@ const Home = () => {
             </span>
             <span style={{width:"45px"}}>
               <IconButton
-                sx={{ color: "#ffff", padding: "0", margin: "auto" }}
+                sx={{ color: darkMode ? "#ffff" : "black", padding: "0", margin: "auto" }}
                 onClick={() => redirectToEmail()}
                 aria-label="email button"
               >
@@ -96,25 +105,26 @@ const Home = () => {
             </span>
             <span style={{width:"45px"}}>
               <IconButton
-                sx={{ color: "#ffff", padding: "0", margin: "auto"  }}
+                sx={{ color: darkMode ? "#ffff" : "black", padding: "0", margin: "auto"  }}
                 onClick={() => redirectToGitHub()}
                 aria-label="github button"
               >
-                <GitHubIcon sx={{ fontSize: "24px", "&:hover":{fontSize: "34px"}, transition: "font-size 0.3s ease-in-out" }}/>
+                <GitHubIcon sx={{ fontSize: "26px", "&:hover":{fontSize: "36px"}, transition: "font-size 0.3s ease-in-out" }}/>
               </IconButton>
             </span>            
           </Box>
         </Box>
       </Box>
-      <Box sx={{ height: "100%" }}>
+      <Box sx={{ height: "102%", width: isMobile ? "50%" : "auto"}}>
         <img
-          src={isMobile ? bgMobile : bg }
+          src={darkMode ? bg : bg2 }
           style={{
-            objectFit: "cover",
+            objectFit: isMobile ? "none" : "cover",
+            objectPosition: isMobile ? "right" : "center",
             height: "100%",
             filter: "brightness(1.1)",
             maskImage:
-              isMobile ? "linear-gradient(to right, transparent 0%, black 20%, transparent 97%)" : "linear-gradient(to right, transparent 0%, black 5%, transparent 97%)",
+              isMobile ? "linear-gradient(to right, transparent 0%, black 20%, transparent 97%)" : "linear-gradient(to right, transparent 10%, black 50%)",
           }}
           alt="background image"
         />
