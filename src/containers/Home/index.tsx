@@ -19,7 +19,7 @@ const Home = () => {
   }, []);
   const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
   const isMobile = useMediaQuery('(max-width:600px)');
-  const isTablet = useMediaQuery('(max-width:960px)');
+  const isTablet = useMediaQuery('(max-width:900px)');
   
   const contact = {
     name: "Renaldi P. Basuki",
@@ -45,7 +45,6 @@ const Home = () => {
       sx={{
         height: "100svh",
         width: "100svw",
-        paddingTop: "40px",
         background: darkMode ? "#030303" : "#EEF5FF",
         display: "flex",
         justifyContent: "space-between",
@@ -115,16 +114,17 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ height: "102%", width: isMobile ? "50%" : "auto"}}>
+      <Box sx={{ height: "102%", width: isMobile ? "50%" : isTablet ? "70%": "auto"}}>
         <img
           src={darkMode ? bg : bg2 }
           style={{
-            objectFit: isMobile ? "none" : "cover",
-            objectPosition: isMobile ? "right" : "center",
+            objectFit: isTablet ? "none" : "cover",
+            objectPosition: isTablet ? "right" : "center",
             height: "100%",
+            marginLeft: isTablet ? "-100px" : "auto",
             filter: "brightness(1.1)",
             maskImage:
-              isMobile ? "linear-gradient(to right, transparent 0%, black 20%, transparent 97%)" : "linear-gradient(to right, transparent 10%, black 50%)",
+              isMobile ? "linear-gradient(to right, transparent 0%, black 20%, transparent 97%)" : "linear-gradient(to right, transparent 5%, black 50%)",
           }}
           alt="background image"
         />
