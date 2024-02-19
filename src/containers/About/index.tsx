@@ -45,7 +45,7 @@ const About = () => {
           sx={{
             fontWeight: 800,
             fontFamily: "Rubik, system-ui",
-            paddingTop: isTablet ? "64px" : 0,
+            paddingTop: isTablet ? "80px" : 0,
             marginBottom: isMobile ? "65px" : 0,
             transition: "text-shadow 0.8s ease-in-out",
             textShadow: darkMode ? "none" : "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)"

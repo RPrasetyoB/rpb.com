@@ -24,7 +24,7 @@ interface Props {
   window?: () => Window;
 }
 
-const drawerWidth = 220;
+const drawerWidth = 200;
 const navItems = ["Home", "About", "Resume"];
 
 const Navbar = (props: Props) => {
@@ -162,7 +162,7 @@ const Navbar = (props: Props) => {
         >
           <Box
             onClick={handleDrawerToggle}
-            sx={{ bgcolor: "black", height: "100vh" }}
+            sx={{ bgcolor: darkMode ? "black" : "rgba(238, 245, 255, 0.2)", height: "100vh" }}
           >
             <Divider />
             <List sx={{ paddingTop: "80px" }}>
@@ -190,7 +190,6 @@ const Navbar = (props: Props) => {
                     <Button
                       sx={{
                         textAlign: "center",
-                        color: "white",
                         position: "relative",
                         paddingLeft: "35px",
                         ...(activeSection === item.toLowerCase() && {
@@ -199,7 +198,9 @@ const Navbar = (props: Props) => {
                       }}
                       onClick={delayDrawerToggle}
                     >
-                      {item}
+                      <Typography variant="h6" sx={{color: darkMode ? "white" : "black", fontWeight: 500}}>
+                        {item}
+                      </Typography>
                       {activeSection === item.toLowerCase() && (
                         <span
                           style={{
@@ -210,7 +211,7 @@ const Navbar = (props: Props) => {
                             width: "0",
                             height: "0",
                             borderBottom: "8px solid transparent",
-                            borderLeft: "8px solid #fff",
+                            borderLeft: darkMode ? "8px solid #fff" : "8px solid #000",
                             borderTop: "8px solid transparent",
                             transform: "translateY(-50)",
                           }}
