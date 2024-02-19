@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
   Toolbar,
+  Typography,
   useMediaQuery,
 } from "@mui/material";
 import { Link } from "react-scroll";
@@ -18,6 +19,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import { ModeState } from "../../utils/GlobalState";
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import "./style.css";
 
 interface Props {
   window?: () => Window;
@@ -39,6 +41,7 @@ const Navbar = (props: Props) => {
 
   const isCustomBreakpoint = useMediaQuery(`(max-width:${customBreakpoint}px)`);
   const isMobile = useMediaQuery('(max-width:600px)');
+  const isTable = useMediaQuery('(max-width:900px)');
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -64,7 +67,7 @@ const Navbar = (props: Props) => {
   return (
     <Box>
       <CssBaseline />
-      <AppBar component="nav" sx={{ background: darkMode ? "black" : "rgba(238, 245, 255, 0.5)", maxWidth: "100%", transition : "background 0.8s ease-in-out", backdropFilter: darkMode ? "none" : "blur(20px)",
+      <AppBar component="nav" sx={{ background: darkMode ? "black" : "rgba(238, 245, 255, 0.65)", maxWidth: "100%", transition : "background 0.8s ease-in-out", backdropFilter: darkMode ? "none" : "blur(20px)",
     WebkitBackdropFilter: darkMode ? "none" : "blur(20px)" }}>
         <Toolbar
           sx={{
@@ -75,7 +78,7 @@ const Navbar = (props: Props) => {
           <img
             src={darkMode ? whiteLogo : blackLogo}
             alt="logo"
-            width={isMobile ? 50 : 70}
+            width={isTable ? 50 : 70}
             style={{ marginLeft: isMobile ? 7 : isCustomBreakpoint ? "4vw" : "4.5vw" }}
           />
           <Box sx={{ display: { sm: "none", xs: "flex" }, alignItems: "center" }}>
@@ -116,6 +119,10 @@ const Navbar = (props: Props) => {
                 >
                   <Button
                     sx={{
+                      '&&': {
+                        fontWeight: 'bold',
+                      },
+                      fontWeight: "bold",
                       color: darkMode ? "white" : "black",
                       margin: "auto",
                       "&:hover": { fontSize: "1rem" } ,
@@ -126,7 +133,9 @@ const Navbar = (props: Props) => {
                       }),
                     }}
                   >
-                    {item}
+                      <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                        {item}
+                      </Typography>
                     </Button>                           
                 </Link>
             ))}

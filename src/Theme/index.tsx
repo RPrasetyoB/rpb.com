@@ -20,6 +20,9 @@ const CustomThemeProvider = ({ children }: CustomThemeProviderProps) => {
   const { darkMode } = React.useContext(ModeState);
   const theme = createTheme({
     typography: {
+      button: {
+        fontWeight: 700,
+      },
       logotype: {
         fontFamily: "eixample-dip, serif",
         fontWeight: 700,

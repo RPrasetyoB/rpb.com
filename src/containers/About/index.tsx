@@ -31,6 +31,7 @@ const About = () => {
         minHeight: "100svh",
         gap: isTablet ? "5vw" : "10px",
         backgroundImage: darkMode ? `url(${bgDark})` : `url(${bgLight})`,
+        backgroundPosition:"center",
         backgroundSize: "cover",
         display : "flex",
         flexDirection: "column",
@@ -98,7 +99,7 @@ const About = () => {
               <HorizontalRuleIcon
                 sx={{ color: "lightskyblue", alignSelf: "center" }}
               />
-              <Typography variant="body1" sx={{ maxWidth: isMobile ? "26vw" : "20vw", fontWeight: darkMode ? "auto" : 500 }}>
+              <Typography variant="h6" sx={{ maxWidth: isMobile ? "26vw" : "20vw", fontWeight: darkMode ? "auto" : 500 }}>
                 Banyuwangi, East-Java, Indonesia
               </Typography>
               <HorizontalRuleIcon

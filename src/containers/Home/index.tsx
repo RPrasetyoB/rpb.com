@@ -2,7 +2,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import bg from "../../assets/home/home-image.webp";
-import bg2 from "../../assets/home/home-image - BW.webp"
+import bg2 from "../../assets/home/home-image - BW.webp";
+import bgTabletLight from "../../assets/home/home-image-mobile-light.webp";
+import bgTabletDark from "../../assets/home/home-image-mobile.webp";
 import { Leaf, Occupations } from "../../component";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -29,6 +31,8 @@ const Home = () => {
     no: "https://wa.me/6285236891709",
   };
 
+  const backgroundImage = isTablet && darkMode ? bgTabletDark : isTablet ? bgTabletLight : darkMode ? bg2 : bg;
+
   const redirectToLinkedIn = () => {
     window.open(contact.linkedIn, "_blank");
   };
@@ -49,7 +53,7 @@ const Home = () => {
         display: "flex",
         justifyContent: "space-between",
         overflow: "hidden",
-        transition: "background 0.8s ease-in-out"
+        transition: "background 0.8s ease-in-out",
       }}
     >
       {darkMode ? (<Tsparticle />) : (<Leaf />)}
@@ -66,7 +70,13 @@ const Home = () => {
             variant="h2"
             sx={{ fontFamily: "Rubik Doodle Shadow, system-ui" }}
           >
-            RENALDI PRASETYO
+            RENALDI
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={{ fontFamily: "Rubik Doodle Shadow, system-ui" }}
+          >
+            PRASETYO
           </Typography>
           <Typography
             variant="h2"
@@ -114,21 +124,17 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ height: "102%", width: isMobile ? "50%" : isTablet ? "70%": "auto"}}>
+      <Box sx={{ height: "102%", display: "flex", width: isMobile ? "95%" : "auto",justifyContent: "flex-end" }}>
         <img
-          src={darkMode ? bg : bg2 }
+          src= {backgroundImage}
           style={{
-            objectFit: isTablet ? "none" : "cover",
-            objectPosition: isTablet ? "right" : "center",
             height: "100%",
-            marginLeft: isTablet ? "-100px" : "auto",
-            filter: "brightness(1.1)",
-            maskImage:
-              isMobile ? "linear-gradient(to right, transparent 0%, black 20%, transparent 97%)" : "linear-gradient(to right, transparent 5%, black 50%)",
+            objectPosition:"right",
+            maskImage: isTablet ? "linear-gradient(to right, transparent 40% black 90%)" : "linear-gradient(to right, transparent 5%, black 50%)",
           }}
           alt="background image"
         />
-      </Box>
+    </Box>
     </Box>
   );
 };
