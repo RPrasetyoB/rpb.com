@@ -3,8 +3,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import bg from "../../assets/home/home-image.webp";
 import bg2 from "../../assets/home/home-image - BW.webp";
-import bgTabletLight from "../../assets/home/home-image-mobile-light.webp";
-import bgTabletDark from "../../assets/home/home-image-mobile.webp";
+import bgTabletLight from "../../assets/home/home-image-mobile.jpg";
+import bgTabletDark from "../../assets/home/home-image-mobile -Dark.jpg";
 import { Leaf, Occupations } from "../../component";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -50,11 +50,11 @@ const Home = () => {
       sx={{
         height: "100svh",
         width: "100svw",
-        background: darkMode ? "#030303" : "#EEF5FF",
         display: "flex",
         justifyContent: "space-between",
         overflow: "hidden",
-        transition: "background 0.8s ease-in-out",
+        transition: "background 0.8s ease-in-out",        
+        background: darkMode ? "#030303" : "#EEF5FF",
       }}
     >
       {darkMode ? (<Tsparticle />) : (<Leaf />)}
@@ -130,7 +130,7 @@ const Home = () => {
           sx={{
             height: "102%",
             display: "flex",
-            width: isMobile ? "85%" : "auto",
+            width: isMobile ? "100%" : "auto",
             justifyContent: "flex-end",
           }}
         >
@@ -138,8 +138,8 @@ const Home = () => {
             src={backgroundImage}
             style={{
               height: "100%",
-              objectPosition: "right",
-              maskImage: isTablet ? "linear-gradient(to right, transparent 40% black 90%)" : "linear-gradient(to right, transparent 5%, black 50%)",
+              objectFit: "cover",
+              maskImage: isTablet ? "linear-gradient(to right, transparent 30% black 90%)" : "linear-gradient(to right, transparent 5%, black 50%)",
             }}
             alt="background image"
           />
