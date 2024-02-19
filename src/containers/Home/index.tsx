@@ -130,7 +130,7 @@ const Home = () => {
           sx={{
             height: "102%",
             display: "flex",
-            width: isMobile ? "70%" : "auto",
+            width: isMobile ? "85%" : "auto",
             justifyContent: "flex-end",
           }}
         >
