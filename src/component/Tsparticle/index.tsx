@@ -2,7 +2,7 @@ import Snowfall from 'react-snowfall'
 
 const Tsparticle = () => {
   return ( 
-    <div style={{ height: "92vh", width: "98vw",position: "absolute" }}>
+    <div style={{ height: "98vh", width: "95vw",position: "absolute" }}>
       <Snowfall />
     </div>
   )

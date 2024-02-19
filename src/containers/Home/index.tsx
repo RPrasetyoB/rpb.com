@@ -1,10 +1,10 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import bg from "../../assets/home/home-image.webp";
-import bg2 from "../../assets/home/home-image - BW.webp";
-import bgTabletLight from "../../assets/home/home-image-mobile.jpg";
-import bgTabletDark from "../../assets/home/home-image-mobile -Dark.jpg";
+import bg from "../../assets/home/home-light2.webp";
+import bg2 from "../../assets/home/home-image.webp";
+import homeLight from "../../assets/home/home-light.jpg";
+import homeDark from "../../assets/home/transparent.png";
 import { Leaf, Occupations } from "../../component";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -32,7 +32,7 @@ const Home = () => {
     no: "https://wa.me/6285236891709",
   };
 
-  const backgroundImage = isTablet && darkMode ? bgTabletDark : isTablet ? bgTabletLight : darkMode ? bg2 : bg;
+  const backgroundImage = darkMode ? bg2 : bg;
 
   const redirectToLinkedIn = () => {
     window.open(contact.linkedIn, "_blank");
@@ -48,13 +48,16 @@ const Home = () => {
   return (
     <Box
       sx={{
-        height: "100svh",
+        height: "auto",
+        minHeight: "100svh",
         width: "100svw",
         display: "flex",
         justifyContent: "space-between",
         overflow: "hidden",
-        transition: "background 0.8s ease-in-out",        
-        background: darkMode ? "#030303" : "#EEF5FF",
+        background: darkMode ? "#030303" : "transparent",
+        backgroundImage: !darkMode ? `url(${homeLight})` : `url(${homeDark})`,
+        transition: " background-image  0.8s ease-in-out, background  0.8s ease-in-out",       
+        backgroundSize: "cover",
       }}
     >
       {darkMode ? (<Tsparticle />) : (<Leaf />)}
@@ -62,7 +65,8 @@ const Home = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          paddingLeft: isMobile ? 3 : isTablet? "8vw" : "6vw",
+          paddingLeft: isMobile ? 6 : isTablet? "8vw" : "6vw",
+          gap: "5vh",
           justifyContent: "space-around",
         }}
       >
@@ -128,9 +132,8 @@ const Home = () => {
         <Box
           className="background-image"
           sx={{
-            height: "102%",
-            display: "flex",
-            width: isMobile ? "100%" : "auto",
+            display: isMobile ? "none" : "flex",
+            width: isTablet ? "200%" : "auto",
             justifyContent: "flex-end",
           }}
         >

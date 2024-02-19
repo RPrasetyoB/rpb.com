@@ -76,7 +76,7 @@ const About = () => {
               textAlign: "justify",
             }}
           >
-            <Typography variant="h6" sx={{textShadow: "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)", fontWeight: darkMode ? "auto" : 500, transition: "text-shadow 0.8s ease-in-out",}}>
+            <Typography variant="h6" sx={{textShadow: darkMode ? "none" :  "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)", fontWeight: darkMode ? "auto" : 500, transition: "text-shadow 0.8s ease-in-out",}}>
               <span style={{ color: darkMode ? "lightskyblue" : "blue" }}>
                 Renaldi Prasetyo Basuki
               </span>
@@ -93,7 +93,7 @@ const About = () => {
                 alignSelf: "center",
                 marginLeft: "-3vw",
                 textAlign: "center",
-                textShadow: "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)"
+                textShadow: darkMode ? "none" : "5px 5px 7px rgba(255,255,255, 0.5), -5px -5px 7px rgba(255,255,255, 0.5), 5px -5px 7px rgba(255,255,255, 0.5), -5px 5px 7px rgba(255,255,255, 0.5)"
               }}
             >
               <HorizontalRuleIcon
