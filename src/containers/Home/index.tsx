@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Tsparticle from "../../component/Tsparticle";
 import React from "react";
 import { ModeState } from "../../utils/GlobalState";
+import "./style.css"
 
 const Home = () => {
   const [customBreakpoint, setCustomBreakpoint] = React.useState<number | undefined>(undefined);
@@ -124,17 +125,25 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ height: "102%", display: "flex", width: isMobile ? "95%" : "auto",justifyContent: "flex-end" }}>
-        <img
-          src= {backgroundImage}
-          style={{
-            height: "100%",
-            objectPosition:"right",
-            maskImage: isTablet ? "linear-gradient(to right, transparent 40% black 90%)" : "linear-gradient(to right, transparent 5%, black 50%)",
+        <Box
+          className="background-image"
+          sx={{
+            height: "102%",
+            display: "flex",
+            width: isMobile ? "70%" : "auto",
+            justifyContent: "flex-end",
           }}
-          alt="background image"
-        />
-    </Box>
+        >
+          <img
+            src={backgroundImage}
+            style={{
+              height: "100%",
+              objectPosition: "right",
+              maskImage: isTablet ? "linear-gradient(to right, transparent 40% black 90%)" : "linear-gradient(to right, transparent 5%, black 50%)",
+            }}
+            alt="background image"
+          />
+        </Box>
     </Box>
   );
 };
