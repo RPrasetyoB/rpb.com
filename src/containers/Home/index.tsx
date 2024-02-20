@@ -48,8 +48,7 @@ const Home = () => {
   return (
     <Box
       sx={{
-        height: "auto",
-        minHeight: "100svh",
+        height: "100svh",
         width: "100svw",
         display: "flex",
         justifyContent: "space-between",
