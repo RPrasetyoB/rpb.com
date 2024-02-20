@@ -71,21 +71,24 @@ const Home = () => {
     <>
       {imagesPreloaded && (
         <Box
-        className= {style.container}
-        sx={{
-          height: "100svh",
-          minHeight: "800px",
-          width: "100svw",
-          display: "flex",
-          justifyContent: "space-between",
-          overflow: "hidden",
-          background: darkMode ? "#030303" : "transparent",
-          backgroundImage: !darkMode ? `url(${homeLight})` : `url(${homeDark})`,
-          transition: " background-image  0.8s ease-in-out, background  0.8s ease-in-out",
-          "-moz-transition" : "background-image  0.8s ease-in-out, background  0.8s ease-in-out",   
-          backgroundSize: "cover",
-        }}
-      >
+          className= {style.container}
+          sx={{
+            height: "100svh",
+            minHeight: "800px",
+            width: "100svw",
+            display: "flex",
+            justifyContent: "space-between",
+            overflow: "hidden",
+            background: darkMode ? "#030303" : "transparent",
+            backgroundImage: !darkMode ? `url(${homeLight})` : `url(${homeDark})`,
+            transition: "all  0.8s ease-in-out",
+            "-moz-transition" : "all  0.8s ease-in-out",
+            "-webkit-transition" : "all  0.8s ease-in-out",
+            "-o-transition" : "all  0.8s ease-in-out",  
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+          }}
+        >
         {darkMode ? (<Tsparticle />) : (<Leaf />)}
         <Box
           sx={{
@@ -168,6 +171,7 @@ const Home = () => {
               style={{
                 height: "100%",
                 objectFit: "cover",
+                objectPosition:"right",
                 maskImage: isTablet ? "linear-gradient(to right, transparent 30% black 90%)" : "linear-gradient(to right, transparent 5%, black 50%)",
               }}
               alt="background image"
