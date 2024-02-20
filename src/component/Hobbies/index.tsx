@@ -4,20 +4,24 @@ import MovieIcon from "@mui/icons-material/Movie";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import { Card, CardContent, Typography } from "@mui/material"
 import Box from "@mui/material/Box";
+import { useContext } from "react";
+import { ModeState } from "../../utils/GlobalState";
 
 
 
 const Hobbies = () => {
+  const { darkMode } = useContext(ModeState);
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "2vh" }}>
           <Typography
             variant="h4"
-            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: "8px 8px 10px rgba(0, 0, 0, 1)" }}
+            sx={{ fontSize: "1.8rem", textAlign: "center", textShadow: darkMode ? "5px 5px 7px rgba(0, 0, 0, 0.5), -5px -5px 7px rgba(0, 0, 0, 0.5), 5px -5px 7px rgba(0, 0, 0, 0.5), -5px 5px 7px rgba(0, 0, 0, 0.5)" :
+            "5px 5px 7px rgba(255, 255, 255, 0.5), -5px -5px 7px rgba(255, 255, 255, 0.5), 5px -5px 7px rgba(255, 255, 255, 0.5), -5px 5px 7px rgba(255, 255, 255, 0.5)" }}
           >
             Hobbies & Interest
           </Typography>
           <Box sx={{ maxWidth: "500px" }}>
-            <Card sx={{ bgcolor: "#31313bce"}}>
+            <Card sx={{ bgcolor: darkMode ? "#31313bce" : "rgba(237, 237, 222, 0.8)"}}>
               <CardContent>
                 <Box
                   sx={{
@@ -34,9 +38,9 @@ const Hobbies = () => {
                     }}
                   >
                     <SportsEsportsIcon
-                      sx={{ color: "white", fontSize: "4rem" }}
+                      sx={{ color: darkMode ? "white" : "black", fontSize: "4rem" }}
                     />
-                    <Typography sx={{ color: "white" }}>Gaming</Typography>
+                    <Typography sx={{ color: darkMode ? "white" : "black" }}>Gaming</Typography>
                   </Box>
                   <Box
                     sx={{
@@ -45,8 +49,8 @@ const Hobbies = () => {
                       alignItems: "center",
                     }}
                   >
-                    <CameraAltIcon sx={{ color: "white", fontSize: "4rem" }} />
-                    <Typography sx={{ color: "white" }}>Photography</Typography>
+                    <CameraAltIcon sx={{ color: darkMode ? "white" : "black", fontSize: "4rem" }} />
+                    <Typography sx={{ color: darkMode ? "white" : "black" }}>Photography</Typography>
                   </Box>
                   <Box
                     sx={{
@@ -55,8 +59,8 @@ const Hobbies = () => {
                       alignItems: "center",
                     }}
                   >
-                    <MovieIcon sx={{ color: "white", fontSize: "4rem" }} />
-                    <Typography sx={{ color: "white" }}>Watch Movie</Typography>
+                    <MovieIcon sx={{ color: darkMode ? "white" : "black", fontSize: "4rem" }} />
+                    <Typography sx={{ color: darkMode ? "white" : "black" }}>Watch Movie</Typography>
                   </Box>
                   <Box
                     sx={{
@@ -65,8 +69,8 @@ const Hobbies = () => {
                       alignItems: "center",
                     }}
                   >
-                    <TerminalIcon sx={{ color: "white", fontSize: "4rem" }} />
-                    <Typography sx={{ color: "white" }}>Tech News</Typography>
+                    <TerminalIcon sx={{ color: darkMode ? "white" : "black", fontSize: "4rem" }} />
+                    <Typography sx={{ color: darkMode ? "white" : "black" }}>Tech News</Typography>
                   </Box>
                 </Box>
               </CardContent>

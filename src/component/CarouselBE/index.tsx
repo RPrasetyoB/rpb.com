@@ -24,10 +24,13 @@ import slide_image_7 from "../../assets/BE/img7.svg";
 import slide_image_8 from "../../assets/BE/img8.svg";
 import slide_image_9 from "../../assets/BE/img9.svg";
 import slide_image_10 from "../../assets/BE/img10.svg";
+import { ModeState } from "../../utils/GlobalState";
+import { useContext } from "react";
 
 function CarouselBE() {
+  const { darkMode } = useContext(ModeState);
   return (
-    <div className={style.container}>
+    <div className={`${darkMode ? style.container : style.containerLight}`}>
       <Typography variant="h5" sx={{ fontWeight: 600, paddingBottom: "10px" }}>
         Back-End
       </Typography>
@@ -56,7 +59,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -71,7 +74,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -86,7 +89,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -101,7 +104,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -116,7 +119,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -131,7 +134,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -146,7 +149,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -161,7 +164,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -176,7 +179,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -191,7 +194,7 @@ function CarouselBE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",

@@ -9,15 +9,18 @@ import SchoolIcon from '@mui/icons-material/School';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import Typography from '@mui/material/Typography';
+import { ModeState } from '../../utils/GlobalState';
+import { useContext } from 'react';
 
 const ExpTimeline=() => {
+  const { darkMode } = useContext(ModeState);
   return (
     <Timeline position="alternate">
       <TimelineItem>
         <TimelineOppositeContent
           sx={{ mt: 2 }}
           variant="body2"
-          color="white"
+          color= {darkMode ? "white" : "black"}
         >
           Now
         </TimelineOppositeContent>
@@ -38,7 +41,7 @@ const ExpTimeline=() => {
         <TimelineOppositeContent
             sx={{ m: 'auto 0' }}
             variant="body2"
-            color="white"
+            color= {darkMode ? "white" : "black"}
           >
             2022-2023 <span style={{textDecoration:"italic"}}>Switching Career</span>
         </TimelineOppositeContent>
@@ -60,7 +63,7 @@ const ExpTimeline=() => {
         <TimelineOppositeContent
             sx={{ m: 'auto 0' }}
             variant="body2"
-            color="white"
+            color= {darkMode ? "white" : "black"}
           >
             2011 - 2022
         </TimelineOppositeContent>

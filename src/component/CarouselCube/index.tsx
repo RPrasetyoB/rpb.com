@@ -15,10 +15,13 @@ import slide_image_6 from "../../assets/utils/img6.svg";
 import slide_image_7 from "../../assets/utils/img7.svg";
 import slide_image_8 from "../../assets/utils/img6.svg";
 import slide_image_9 from "../../assets/utils/img7.svg";
+import { useContext } from "react";
+import { ModeState } from "../../utils/GlobalState";
 
 function CarouselCube() {
+  const { darkMode } = useContext(ModeState);
   return (
-    <div className={styles.container}>
+    <div className={`${darkMode ? styles.container : styles.containerLight}`}>
       <Typography variant="h5" sx={{ fontWeight: 600, paddingBottom: "10px" }}>
         Others
       </Typography>
@@ -42,7 +45,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -58,7 +61,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -74,7 +77,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -90,7 +93,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -106,7 +109,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -122,7 +125,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -138,7 +141,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -154,7 +157,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -170,7 +173,7 @@ function CarouselCube() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",

@@ -19,10 +19,13 @@ import slide_image_4 from "../../assets/FE/img4.svg";
 import slide_image_5 from "../../assets/FE/img5.svg";
 import slide_image_6 from "../../assets/FE/img6.svg";
 import slide_image_7 from "../../assets/FE/img7.svg";
+import { ModeState } from "../../utils/GlobalState";
+import { useContext } from "react";
 
 function CarouselFE() {
+  const { darkMode } = useContext(ModeState);
   return (
-    <div className={styles.container}>
+    <div className={`${darkMode ? styles.container : styles.containerLight}`}>
       <Typography variant="h5" sx={{ fontWeight: 600, paddingBottom: "10px" }}>
         Front-End
       </Typography>
@@ -57,7 +60,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -72,7 +75,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -87,7 +90,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -102,7 +105,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -117,7 +120,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -132,7 +135,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
@@ -147,7 +150,7 @@ function CarouselFE() {
         <SwiperSlide
           style={{
             textAlign: "center",
-            background: "#DDE6ED",
+            background: darkMode ? "#DDE6ED" : "#FDF0D1",
             width: "45%",
             height: "90%",
             display: "flex",
