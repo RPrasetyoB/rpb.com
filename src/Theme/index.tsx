@@ -76,6 +76,9 @@ const CustomThemeProvider = ({ children }: CustomThemeProviderProps) => {
         fontWeight: 200,
         fontSize: "1.1rem",
         color: darkMode ? "white" : "black",
+        '@media (max-width: 1100px)': {
+          fontSize: '1rem',
+        },
         '@media (max-width:768px)': {
           fontSize: '0.9rem',
         }

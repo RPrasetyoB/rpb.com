@@ -122,7 +122,7 @@ const About = () => {
                 className="about-photo"
                 src={darkMode ? realPhoto : animatedPhoto}
                 style={{
-                  maxHeight: isTablet ? "40vh" : "70vh",
+                  maxHeight: isMobile ? "40vh" : isTablet ? "50vh" : isCustomBreakpoint ? "55vh" : "70vh",
                   objectFit: "contain",
                   paddingTop: "-60px",
                 }}
