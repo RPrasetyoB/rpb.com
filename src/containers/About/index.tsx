@@ -31,7 +31,6 @@ const About = () => {
         minHeight: "100svh",
         gap: isTablet ? "5vw" : "10px",
         backgroundImage: darkMode ? `url(${bgDark})` : `url(${bgLight})`,
-        backgroundPosition:"center",
         backgroundSize: "cover",
         display : "flex",
         flexDirection: "column",
