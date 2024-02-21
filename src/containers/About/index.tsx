@@ -2,7 +2,7 @@ import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import realPhoto from "../../assets/profile/real.webp";
 import animatedPhoto from "../../assets/profile/anime.webp";
 import bgLight from "../../assets/about/about-light.webp";
-import bgDark from "../../assets/about/about-dark.jpg";
+import bgDark from "../../assets/about/about-dark.webp";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";

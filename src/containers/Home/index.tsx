@@ -4,7 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import bg from "../../assets/home/home-light2.webp";
 import bg2 from "../../assets/home/home-image.webp";
 import homeLight from "../../assets/home/home-light.jpg";
-import homeDark from "../../assets/home/transparent.png";
+import homeDark from "../../assets/home/transparent.webp";
 import { Leaf, Occupations } from "../../component";
 import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
