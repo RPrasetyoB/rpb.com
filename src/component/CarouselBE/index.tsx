@@ -1,7 +1,5 @@
 import { Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import style from "./carousel.module.scss";
 import "swiper/css";
 import "swiper/css/effect-coverflow";

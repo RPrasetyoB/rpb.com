@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useMediaQuery} from "@mui/material";
-import { About, Home, Navbar, Resume } from "../containers";
+import { About, Home, Navbar, Project, Resume } from "../containers";
 import { Element } from "react-scroll";
 import gsap from "gsap";
 import Box from "@mui/material/Box";
@@ -98,6 +98,9 @@ const MainPage = (props: Props) => {
           </Element>
           <Element name="resume" id="welcome">
             <Resume />
+          </Element>
+          <Element name="project" id="welcome">
+            <Project />
           </Element>
     </div>
   );

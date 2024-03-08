@@ -32,9 +32,9 @@ const ExpTimeline=() => {
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
           <Typography variant="h6" component="span">
-            Full Stack Software Engineer
+            Full Stack Developer
           </Typography>
-          <Typography>Making friend with codes</Typography>
+          <Typography sx={{fontSize: "0.8rem"}}>Making friend with codes</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -78,7 +78,7 @@ const ExpTimeline=() => {
           <Typography variant="h6" component="span">
             Sumitomo Heavy Industries
           </Typography>
-          <Typography>11 years worked as Technical Engineer</Typography>
+          <Typography sx={{fontSize: "0.8rem"}}>11 years worked as Technical Engineer</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>
