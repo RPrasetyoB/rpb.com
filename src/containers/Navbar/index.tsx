@@ -132,7 +132,7 @@ const Navbar = (props: Props) => {
                       }),
                     }}
                   >
-                      <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                      <Typography variant="h6" sx={{ fontWeight: 600 }}>
                         {item}
                       </Typography>
                     </Button>                           
