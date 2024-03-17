@@ -14,12 +14,17 @@ const MainPage = (props: Props) => {
   const { window } = props;
   const isMobile = useMediaQuery('(max-width:600px)');
   const isTablet = useMediaQuery('(max-width:960px)');
+  const [isIntroPlaying, setIsIntroPlaying] = React.useState(true);
 
   const comp = React.useRef(null);
 
   React.useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const t1 = gsap.timeline();
+      const t1 = gsap.timeline({
+        onComplete: () => {
+          setIsIntroPlaying(false);
+        }
+      });
       t1.from("#intro-slider", {
         xPercent: "0",
         duration: 0.5,
@@ -90,18 +95,25 @@ const MainPage = (props: Props) => {
           <Navbar />
         </div>
       </Box>
-          <Element name="home" id="welcome">
-            <Home />
-          </Element>
-          <Element name="about" id="welcome">
-            <About />
-          </Element>
-          <Element name="resume" id="welcome">
-            <Resume />
-          </Element>
-          <Element name="project" id="welcome">
-            <Project />
-          </Element>
+      <Box style={{
+        opacity: isIntroPlaying ? 0 : 1,
+        maxHeight: isIntroPlaying ? 0 : 'none',
+        overflow: 'hidden',
+        transition: "opacity 0.5s ease-in-out, max-height 0.5s ease-in-out"
+      }}>
+        <Element name="home" id="welcome">
+          <Home />
+        </Element>
+        <Element name="about" id="welcome">
+          <About />
+        </Element>
+        <Element name="resume" id="welcome">
+          <Resume />
+        </Element>
+        <Element name="project" id="welcome">
+          <Project />
+        </Element>
+      </Box>
     </div>
   );
 };
