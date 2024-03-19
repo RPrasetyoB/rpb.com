@@ -86,7 +86,7 @@ const Home = () => {
             "-webkit-transition" : "all  0.8s ease-in-out",
             "-o-transition" : "all  0.8s ease-in-out",  
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "left center"
           }}
         >
         {darkMode ? (<Tsparticle />) : (<Leaf />)}
